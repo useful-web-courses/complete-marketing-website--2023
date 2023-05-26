@@ -2,7 +2,7 @@ html {
   --border--width: 2px;
   --border--radius: 8px;
 
-  --color--accent: #c068f0;
+  --color--accent: #ed6941;
   --color--background: #121212;
   --color--faint: rgba(255, 255, 255, 0.5);
   --color--surface: #080808;
@@ -184,13 +184,13 @@ footer p {
 }
 
 .section--welcome video {
-  background-size: cover;
   position: fixed;
   width: 100%;
   height: 80vh;
   top: 0;
   left: 0;
   object-fit: cover;
+  opacity: 0.4;
 }
 
 .part--name-and-attributes {
@@ -248,6 +248,33 @@ footer p {
 .container--projects {
   display: grid;
   grid-gap: var(--space--medium);
+}
+
+.container--offer {
+  display: grid;
+  width: 100%;
+  height: 80vh;
+  position: relative;
+  align-content: center;
+  justify-content: center;
+}
+
+.container--offer .part--offer-info {
+  border: 2px solid var(--color--text-primary);
+  padding: var(--space--small);
+  box-sizing: border-box;
+  z-index: 2;
+  background: var(--color--background);
+}
+
+.container--offer img {
+  position: absolute;
+  width: 100%;
+  height: 80vh;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  opacity: 0.8;
 }
 
 .container--sales-pitch {
@@ -329,7 +356,7 @@ footer p {
 }
 
 .component--portrait {
-  border-left: 16px solid var(--color--text-primary);
+  border: 6px solid var(--color--text-primary);
   box-sizing: border-box;
 
   width: 100%;
@@ -338,10 +365,7 @@ footer p {
 }
 
 .component--portrait img {
-  margin: 24px;
   box-sizing: border-box;
-  margin-left: 0;
-  background: var(--color--accent);
 }
 
 .component--contact-info a {
