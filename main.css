@@ -277,6 +277,8 @@ header video {
   position: relative;
   align-content: center;
   justify-content: center;
+  padding: var(--space--medium);
+  box-sizing: border-box;
 }
 
 .section--locations {
@@ -324,6 +326,8 @@ header video {
   display: grid;
   grid-gap: var(--space--medium);
   padding: var(--space--medium);
+  max-width: 768px;
+  margin: auto;
 }
 
 @media screen and (min-width: 576px) {
@@ -402,9 +406,9 @@ header video {
   border: 6px solid var(--color--text-primary);
   box-sizing: border-box;
 
-  width: 100%;
-
   overflow: hidden;
+
+  width: 100%;
 }
 
 .component--portrait img {
