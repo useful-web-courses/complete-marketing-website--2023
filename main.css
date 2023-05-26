@@ -48,15 +48,24 @@ body {
 }
 
 header {
-  padding: var(--space--small);
-  display: flex;
-  justify-content: end;
+  box-sizing: border-box;
+
+  margin: auto;
+
+  padding-bottom: 0;
+
+  text-align: right;
+  width: 100%;
+  height: 80vh;
 }
 
 main {
+  background: var(--color--background);
   box-sizing: border-box;
 
   display: grid;
+
+  z-index: 2;
 }
 
 h1,
@@ -149,7 +158,7 @@ a {
 }
 
 button {
-  background: transparent;
+  background: var(--color--surface);
   border: var(--border--width) solid var(--color--text-primary);
   padding: var(--space--tiny);
   color: var(--color--text-primary);
@@ -165,25 +174,36 @@ video {
   margin: auto;
 }
 
+footer {
+  display: grid;
+
+  grid-gap: var(--space--medium);
+
+  justify-content: center;
+}
+
+.part--contact-details {
+  display: grid;
+  grid-gap: var(--space--small);
+}
+
+.part--contact-details a {
+  text-align: center;
+}
+
+@media screen and (min-width: 576px) {
+  .part--contact-details {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 footer p {
   color: var(--color--faint);
   margin-bottom: var(--space--small);
   text-align: center;
 }
 
-.section--welcome {
-  box-sizing: border-box;
-
-  margin: auto;
-
-  padding-bottom: 0;
-
-  text-align: right;
-  width: 100%;
-  height: 80vh;
-}
-
-.section--welcome video {
+header video {
   position: fixed;
   width: 100%;
   height: 80vh;
@@ -257,6 +277,29 @@ footer p {
   position: relative;
   align-content: center;
   justify-content: center;
+}
+
+.section--locations {
+  padding: var(--space--medium);
+  box-sizing: border-box;
+}
+
+.section--locations h2 {
+  text-align: center;
+}
+
+.container--locations {
+  padding: var(--space--medium);
+  display: grid;
+  grid-gap: var(--space--medium);
+  box-sizing: border-box;
+  justify-content: center;
+}
+
+@media screen and (min-width: 576px) {
+  .container--locations {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .container--offer .part--offer-info {
@@ -422,6 +465,13 @@ footer p {
   box-sizing: border-box;
   display: grid;
   grid-gap: var(--space--tiny);
+}
+
+.theme-toggle {
+  position: fixed;
+  top: var(--space--medium);
+  right: var(--space--medium);
+  z-index: 3;
 }
 
 @media screen and (min-width: 1024px) {
