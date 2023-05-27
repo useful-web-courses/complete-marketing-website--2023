@@ -202,10 +202,8 @@ video {
 .part--contact-details {
   display: grid;
   grid-gap: var(--space--small);
-}
 
-@media screen and (min-width: 576px) {
-  .part--contact-details {
+  @media screen and (min-width: 576px) {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -214,15 +212,17 @@ video {
   text-align: center;
 }
 
+/************/
+
 .part--name-and-attributes {
+  align-items: center;
+  height: 80vh;
   position: fixed;
   top: 0;
   left: 0;
-  height: 80vh;
-  width: 100%;
   display: grid;
-  align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 .container--projects {
@@ -331,17 +331,6 @@ video {
 .component--project-card.offset {
   opacity: 0;
   transform: translateX(-24px);
-}
-
-.part--personal-info {
-  text-align: center;
-}
-
-.part--project-info {
-  padding: var(--space--small);
-  box-sizing: border-box;
-  display: grid;
-  grid-gap: var(--space--tiny);
 }
 
 .theme-toggle {
