@@ -1,10 +1,10 @@
 "use strict";
 
-import { javascript_features } from "./javascript-features.js";
-import { validate_javascript_features_are_supported } from "./javascript-features.js";
+import { javascript_features } from "../../private/javascript-features.js";
+import { validate_javascript_features_are_supported } from "../../private/validate-support-for-javascript-functions.js";
 
 export function image_pop_up() {
-  validate_javascript_features(javascript_features.querySelector, javascript_features.querySelectorAll);
+  validate_javascript_features_are_supported(javascript_features.querySelector, javascript_features.querySelectorAll);
 
   const projects = document.querySelector(".section--projects");
 
@@ -18,15 +18,15 @@ export function image_pop_up() {
     return;
   }
 
-  projectImages.forEach((image) => {
+  projectImages.forEach(image => {
     image.style.cursor = "zoom-in";
 
-    image.addEventListener("click", (image) => {
+    image.addEventListener("click", image => {
       const divTag = document.createElement("div");
       divTag.classList.add("container--image-pop-up");
       divTag.style.cursor = "zoom-out";
 
-      divTag.addEventListener("click", (_) => {
+      divTag.addEventListener("click", _ => {
         const popUpContainer = document.querySelector(
           ".container--image-pop-up"
         );

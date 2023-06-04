@@ -1,10 +1,10 @@
 "use strict";
 
-import { validate_functions } from "./validate-support-for-javascript-functions.js";
-import { javascript_features } from "./validate-support-for-javascript-functions.js";
+import { javascript_features } from "../../private/javascript-features.js";
+import { validate_javascript_features_are_supported } from "../../private/validate-support-for-javascript-functions.js";
 
 export function theme_switcher() {
-    validate_functions(javascript_features.query_selector, javascript_features.query_selector_all);
+    validate_javascript_features_are_supported(javascript_features.query_selector, javascript_features.query_selector_all);
 
     const header_tag = document.querySelector("header");
 
@@ -18,14 +18,14 @@ export function theme_switcher() {
 
         const current_theme = html_tag.dataset.theme;
 
-        const themeToggleButton = document.querySelector("#theme-toggle");
+        const theme_toggle_button = document.querySelector("#theme-toggle");
 
         if (current_theme === "dark") {
             html_tag.dataset.theme = "light";
-            themeToggleButton.textContent = "Dark theme";
+            theme_toggle_button.textContent = "Dark theme";
         } else {
             html_tag.dataset.theme = "dark";
-            themeToggleButton.textContent = "Light theme";
+            theme_toggle_button.textContent = "Light theme";
         }
     });
 
