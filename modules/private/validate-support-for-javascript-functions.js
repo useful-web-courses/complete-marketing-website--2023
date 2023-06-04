@@ -10,7 +10,6 @@ export function validate_javascript_features_are_supported(...function_names) {
     });
 
     if (typeof unsupported_functions === "string") {
-        console.log("-----");
         throw unsupported_functions;
     }
 }
